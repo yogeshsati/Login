@@ -1,0 +1,38 @@
+<h1>New User Registration Form</h1>
+<hr/>
+<form method="POST">
+    {% csrf_token %}
+<table border="1">
+    <tr>
+        <td>User Name</td>
+        <td><input type="text" placeholder="Enter Username" name="Username"></td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td><input type="Email" placeholder="Enter Email" name="Email"></td>
+    </tr>
+    <tr>
+        <td>Password</td>
+        <td><input type="password" placeholder="Enter Password" name="Pwd"></td>
+    </tr>
+    <tr>
+        <td>Age</td>
+        <td><input type="text" placeholder="Enter Age" name="Age"></td>
+    </tr>
+    <tr>
+        <td>Gender</td>
+        <td><input type="ratio" value="M" name="Gender"> Male |
+             <input type="ratio" value="F" name="Gender"> Female</td>
+    </tr>
+    <tr>
+        <td><button type="submit">Registration</button></td>
+    </tr>
+</table>
+{% if messages %}
+{% for msg in messages %} 
+<b>{{msg}}</b>
+{% endfor %}
+{% endif %}
+<hr/>
+<em>Already Member <a href="{% url 'LoginPage' %}">Login</a></em>
+</form>
